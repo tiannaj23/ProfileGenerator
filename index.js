@@ -14,8 +14,64 @@ const myTeam = []
 const teamIds = []
 
 function teamMenu() {
+function creatManager() {
+    console.log("build your team")
+    inquirer.prompt([
+        {
+            type:"input",
+            name: "managerName",
+            message: "What's your team managers name?"
+        },
+        {
+            type: "input",
+            name: "managerId",
+            message: "What's the managers ID?"
+        },
+        {
+            type: "input",
+            name: "managerEmail",
+            message: "What's the managers email?"
+        },
+        {
+            type: "input",
+            name: "managerOfficeNumber",
+            message: "What's the managers office number?"
+        }
+    ]).then((answers) =>{
+        const manager = new Manager(
+            answers.managerName,
+            answers.managerId,
+            answers.managerEmail,
+            answers.managerOfficeNumber
+        )
 
+        myTeam.push(manager)
+        teamIds.push(answers.managerId)
+        createTeam()
+    })
 }
 
-teamMenu(
-)
+function createTeam() {
+    inquirer.prompt([
+        {
+            type: "list",
+            name: "memberChoice",
+            message: "What team member do you want to add?",
+            choices: ["Engineer", "Intern", "None"]
+        }
+    ]).then((userChoice) =>{
+        switch(userChoice.memberChoice) {
+            case "Engineer":
+                addEngineer();
+                break;
+            case "Intern":
+                addIntern();
+                break;
+            default: 
+            buildEmployees()
+        }
+    })
+}
+}
+
+teamMenu()
