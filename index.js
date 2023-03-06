@@ -14,7 +14,7 @@ const myTeam = []
 const teamIds = []
 
 function teamMenu() {
-function creatManager() {
+function createManager() {
     console.log("build your team")
     inquirer.prompt([
         {
@@ -72,6 +72,15 @@ function createTeam() {
         }
     })
 }
+    function addEngineer() {}
+    function addIntern() {}
+    function buildEmployees() {
+        if(!fs.existsSync(DIST_DIR)){
+            fs.mkdirSync(DIST_DIR)
+        }
+        fs.writeFileSync(distPath, render(myTeam), "utf-8")
+    }
+    createManager()
 }
 
 teamMenu()
