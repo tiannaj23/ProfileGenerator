@@ -1,0 +1,28 @@
+{
+  "name": "profilegenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiannaj23/ProfileGenerator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiannaj23/ProfileGenerator/issues"
+  },
+  "homepage": "https://github.com/tiannaj23/ProfileGenerator#readme",
+  "dependencies": {
+    "inquirer": "8.2.4",
+    "jest": "24.8.0"
+  }
+}
