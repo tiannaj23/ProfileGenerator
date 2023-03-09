@@ -56,7 +56,7 @@ function createTeam() {
         {
             type: "list",
             name: "memberChoice",
-            message: "What team member do you want to add?",
+            message: "What type of team member would you like to add to your team?",
             choices: ["Engineer", "Intern", "None"]
         }
     ]).then((userChoice) =>{
@@ -73,6 +73,8 @@ function createTeam() {
     })
 }
     function addEngineer() {}
+
+    
     function addIntern() {}
     function buildEmployees() {
         if(!fs.existsSync(DIST_DIR)){
