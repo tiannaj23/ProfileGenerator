@@ -25,12 +25,12 @@ function createManager() {
         {
             type: "input",
             name: "managerId",
-            message: "What's the managers ID?"
+            message: "What's the managers employee ID#?"
         },
         {
             type: "input",
             name: "managerEmail",
-            message: "What's the managers email?"
+            message: "What's the managers email address?"
         },
         {
             type: "input",
@@ -73,9 +73,77 @@ function createTeam() {
     })
 }
     function addEngineer() {}
+    inquirer.prompt([
+        {
+            type:"input",
+            name: "engineerName",
+            message: "What's your engineer's name?"
+        },
+        {
+            type: "input",
+            name: "engineerId",
+            message: "What's the engineer's employeed ID#?"
+        },
+        {
+            type: "input",
+            name: "engineerEmail",
+            message: "What's the engineer's email address?"
+        },
+        {
+            type: "input",
+            name: "engineerGithub",
+            message: "What's the managers engineer's GitHub username?"
+        }
 
-    
+    ]).then((answers) =>{
+        const engineer = new Engineer(
+            answers.engineerName,
+            answers.engineerId,
+            answers.engineerEmail,
+            answers.engineerGitHub
+        )
+
+        myTeam.push(engineer)
+        teamIds.push(answers.engineerId)
+        createTeam()
+    })
+}
+
     function addIntern() {}
+    inquirer.prompt([
+        {
+            type:"input",
+            name: "internName",
+            message: "What's your intern's name?"
+        },
+        {
+            type: "input",
+            name: "internId",
+            message: "What's the intern's employee ID#?"
+        },
+        {
+            type: "input",
+            name: "engineerEmail",
+            message: "What's the intern's email address?"
+        },
+        {
+            type: "input",
+            name: "internSchool",
+            message: "What school does the intern attend"
+        }
+
+    ]).then((answers) =>{
+        const intern = new Intern(
+            answers.internName,
+            answers.internId,
+            answers.internEmail,
+            answers.internSchool
+        )
+
+        myTeam.push(intern)
+        teamIds.push(answers.internId)
+        createTeam()
+    })
     function buildEmployees() {
         if(!fs.existsSync(DIST_DIR)){
             fs.mkdirSync(DIST_DIR)
