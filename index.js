@@ -72,7 +72,7 @@ function createTeam() {
         }
     })
 }
-    function addEngineer() {}
+    function createEngineer() {}
     inquirer.prompt([
         {
             type:"input",
@@ -109,7 +109,7 @@ function createTeam() {
     })
 }
 
-    function addIntern() {}
+    function createIntern() {}
     inquirer.prompt([
         {
             type:"input",
@@ -150,7 +150,6 @@ function createTeam() {
         }
         fs.writeFileSync(distPath, render(myTeam), "utf-8")
     }
-    createManager()
-}
+    createTeam()
 
 teamMenu()
