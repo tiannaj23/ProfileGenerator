@@ -73,6 +73,7 @@ function createTeam() {
     })
 }
     function createEngineer() {}
+    console.log("build your team")
     inquirer.prompt([
         {
             type:"input",
@@ -110,6 +111,7 @@ function createTeam() {
 }
 
     function createIntern() {}
+    console.log("build your team")
     inquirer.prompt([
         {
             type:"input",
