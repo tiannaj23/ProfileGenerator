@@ -34,6 +34,7 @@ None.
 If you have any questions about the repo, open an issue or contact me directly at tiannaj23@gmail.com. You can find more of my work at [https://github.com/tiannaj23](https://github.com/https://github.com/tiannaj23/).
 
 ## Mock-Up
-
+![screen shot](./images/Mock-Up.jpeg)
 
 ## Walkthrough Video
+[README Generator .webm](https://drive.google.com/file/d/1Ul2yE0DsDuOxOI6HwVOW0zfw5K_2Ew6A/view)
