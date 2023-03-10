@@ -14,7 +14,6 @@ const myTeam = [];
 const teamIds = [];
 
 function teamMenu() {
-    console.log('build your team');
     inquirer
         .prompt([
             {
@@ -59,18 +58,15 @@ function createTeam() {
                 type: 'list',
                 name: 'memberChoice',
                 message: 'What type of team member would you like to add to your team?',
-                choices: ['Engineer', 'Intern', 'None'],
+                choices: [' Engineer', 'Intern', 'None'],
             },
         ])
         .then((userChoice) => {
             switch (userChoice.memberChoice) {
                 case 'Engineer':
-                    let addEngineer= new Engineer(responses.id, responses.name, responses.job, responses.email, responses.github)
-                this.writeHtml(fileName,engineer.formatInfo())
                     addEngineer();
                     break;
                 case 'Intern':
-                    let addIntern= new Intern(responses.id, responses.name, responses.job, responses.email, responses.school)
                     addIntern();
                     break;
                 default:
@@ -156,6 +152,7 @@ function createIntern() {
         });
 }
 function buildEmployees() {
+    console.log('build your team');
     if (!fs.existsSync(DIST_DIR)) {
         fs.mkdirSync(DIST_DIR);
     }
